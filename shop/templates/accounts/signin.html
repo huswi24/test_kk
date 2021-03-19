@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block metadescription %}
+    Sign in and enjoy the variety of stunning and comfy cushions.
+{% endblock %}
+{% block title %}
+    ログイン - KUMAGAI kitchen
+{% endblock %}
+{% block content %}
+    <div class="container">
+      <br>
+      <h1 class="my_title text-center">メンバーズシップ</h1>
+      <br>
+      <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center my_custom_div">
+              <br>
+              <h2 class="my_title">新規登録の方</h2>
+              <br>
+              <p>会員登録しますと、購入履歴やお得なニュースレターを受け取れます</p>
+              <br>
+              <a href="{% url 'signup' %}" class="btn btn-secondary">新規登録</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
+            <div>
+              <br>
+              <h2 class="my_title">すでに会員のお客様</h2>
+              <form method="post">
+                  {% csrf_token %}
+                  <p>{{ form | crispy}}</p>
+                  <button type="submit" class="btn btn-secondary">ログイン</button>
+              </form>
+              <br>
+
+            </div>
+          </div>
+      </div>
+    </div>
+    <br>
+{% endblock %}

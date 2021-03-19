@@ -1,0 +1,66 @@
+<!--shop/templates/shop/category.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block metadescription %}
+   {% if category %}
+        {{ category.description|truncatewords:155 }}
+   {% else %}
+        Welcome to the cushion store where you can buy comfy and awesome cushions.
+   {% endif %}
+{% endblock %}
+{% block title %}
+   {% if category %}
+        KUMAGAI KITCHEN | {{ category.name }} 
+   {% else %}
+        KUMAGAI KITCHEN | 全商品一覧
+   {% endif %}
+{% endblock %}
+{% block content %}
+  
+  
+                
+<div class="top-moji ">
+    {% if category %}
+        <a>{{category.name}}</a>
+    {% else %}
+        <a>商品一覧</a>
+    {% endif %}
+</div>
+<main>
+    <div class="mainarea">
+      <div class="all-item-area">
+         {% for product in products.object_list  %}
+        <div class="all-item ">
+          <div class="all-item-img">
+            <a href="{{product.get_url}}">
+              <img src="{{product.image.url}}" alt="{{product.name}}">
+              <img src="{{product.hoverImage.url}}" alt="{{product.name}}">
+            </a>
+          </div>
+          <div class="all-item-text-area">
+            
+              <div class="all-item-name"><a href="{{product.get_url}}" >{{product.name}}</a></div>
+              <div class="all-item-price"><a href="{{product.get_url}}" >{{product.price }} 円</a><p class="tax-in-text">(税込)</p></div>
+           
+          </div>
+
+          <div class="add-cart-area">
+            {% if product.stock <= 0 %}
+              <a class="no-add-cart-button">在庫切れ</a>
+            {% else %}
+              <a class="add-cart-button" href="{% url 'cart:add_cart' product.id %}"><span >カートに追加</span></a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</main>             
+               
+
+{% include 'footer.html' %}
+{% comment %} <script src="{% static 'js/contact.js' %}"></script> {% endcomment %}
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="{% static 'js/item.js' %}"></script>
+{% endblock %}

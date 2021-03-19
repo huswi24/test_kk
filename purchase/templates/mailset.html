@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thankyou mail </title>
+    <style type="text/css">
+        body{
+        margin:0;
+        padding:0;
+        background-color:#fff
+        }    
+        .ptag{
+            margin: 0;
+            line-height: 1.5rem;
+        }
+        span{
+            margin-left: 30px;
+            font-weight: bold;
+            color: #252525;
+        }
+        a{
+            text-decoration: none;
+        }
+        h3{
+            background-color: #f6f4ef;
+        }
+        .mail-content{
+            /* background-color: #f6f4ef; */
+            min-width:820px ;
+            color: #252525;
+            width: 100%;
+            height: auto;
+            margin-top: 100px;
+        }
+        .mail-top{
+            margin: 0 auto;
+            width: 80%;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /* background-color: #f6f4ef; */
+            border-bottom: white 2px solid;
+        }
+        .mail-logo{
+            width: 100px;
+            height: 100px;   
+        }
+        .mail-logo > img{
+            width: 100px;
+            height: 100px;
+            justify-content: center;
+        }
+        .mail-recipt{
+            width: 100px;
+            height: 100px;
+            text-align: right;
+            font-size: 2rem;
+            vertical-align:center;          
+        }
+        .recipt-title{
+            position: absolute;
+            bottom: 0;
+        }
+        .mail-info{
+            margin: 0 auto;
+            background-color: #f6f4ef;
+            width: 80%;
+            display: flex;
+            border-bottom: white 2px solid;
+        }
+        .left-side{
+            height: auto;
+            min-height: 200px;
+            width: 60%;
+            background-color: #f6f4ef;
+        }
+        .mail-customer-info{
+            /* padding-left: 30px; */
+            height: 100%;
+        }
+        .info-item{
+            min-height: 33%;
+            height: auto;
+        }
+        .info-item:nth-child(2){
+            border-top: white 2px solid;
+            border-bottom: white 2px solid;
+        }
+        .right-side{
+            width: 40%;
+            border-left: white 2px solid;
+        }
+        .mail-detail{
+            margin: 0 auto;
+            /* background-color: #f6f4ef; */
+            width: 80%;
+            min-height: 200px;
+        }
+        .mail-customer-info ,.address-list, .product-list{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .mail-amount{
+            width: 80%;
+            height: 120px;
+            margin: 0 auto;
+            border-top: #f6f4ef 2px solid;
+            border-bottom: #f6f4ef 2px solid;
+        }
+        .mail-footer{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .mail-product-list{
+            width: 100%;
+            min-height: 150px;
+            height: auto;
+        }
+        .product{
+            width: 90%;
+            margin: 0 auto;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+        .product-list{
+            width: 100%;    
+        }
+        .product-info{
+            display: flex;
+        }
+        .product-info-area{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .product-pic{
+            width: 100px;
+            margin: 0;
+        }
+        .product-pic > img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .product-name{
+            font-size: 1.5rem;
+        }
+        .product-review{
+            display:initial;
+        }
+        .product-price{
+            margin-top: 20px;
+        }
+        .mail-amount{
+            width: 80%;
+            margin: 0 auto;
+            text-align: right;
+        }
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="mail.css">-->
+</head>
+<body>
+    <div class="mail-content">
+        <div class="mail-top">
+            <div class="mail-logo"><img src="kumagai1.png" alt=""></div>
+            <div class="mail-recipt"><div calss="recipt-title"></div></div>
+        </div>
+        <div class="mail-info">
+            <div class="left-side">
+                <ul class="mail-customer-info">
+                    <li class="info-item"><p class="ptag"> &nbsp;お名前</p><span>{{ name }}</span></li>
+                    <li class="info-item"><p class="ptag"> &nbsp;購入日</p><span>{{ date }}</span></li>
+                    <li class="info-item"><p class="ptag"> &nbsp;ご注文番号</p><span>{{ pur_id }}</span></li>
+                    
+                </ul>
+            </div>
+            <div class="right-side">
+                <div class="address-title">お届け先</div>
+                <div class="address-info">
+                    <ul class="address-list">
+                        <li class="address1"><p class="ptag"> &nbsp;都道府県</p><span>{{ state }}</span></li>
+                        <li class="address2"><p class="ptag"> &nbsp;住所</p><span>{{ address }}</span></li>
+                        <li class="address3"><p class="ptag"> &nbsp;建物名</p><span>{{ building }}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mail-detail"><h3>ご購入商品</h3>
+            <div class="mail-product">
+                <div class="mail-product-list">
+                    <ul class="product-list">
+                        {% for cart_item in cart_items%}
+                        <li class="product">
+                            <div class="product-info">
+                                <div class="product-pic"><img src="{% static cart_item.product.image.url %}" alt="{{cart_item.product.name}}"></div>
+                                <div class="product-info-area">
+                                    <div class="product-name"><span>{{cart_item.product.name}}</span></div>
+                                    <div class="product-review"><a href="#"><span class="review">レビューを書く</span></a></div>
+                                </div>
+                            </div>
+                            <div class="product-price"><span>{{cart_item.sub_total}}</span>円</div>        
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mail-amount">
+            <div class="mail-subtotal">商品小計<span>{{ total }}</span>円</div>
+            <div class="mail-tax">内消費税<span>{{ tax  }}</span>円</div>
+            <div class="mail-shipping">配送料<span>{{ shipping }}</span>円</div>
+            <div class="mail-total-price"><h3>合計<span>{{ all_total }}</span>円</h3></div>
+        </div>
+        <div class="mail-footer">All right reserved KUMAGAICORPRATION</div>
+    </div>
+    
+    
+</body>
+</html>

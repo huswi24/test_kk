@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block metadescription %}
+    This is the shopping cart page.. Proced to review your items and place the order.
+{% endblock %}
+{% block title %}KUMAGAI KITCHEN | カート{% endblock %}
+{% block content %}
+
+    
+	{% if not cart_items %}
+        <section id="cart">
+          <div class="text-center">
+            <h1 class="text center my_title">買い物かごの中身は空です</h1>
+            <br>
+          
+                <a href="{% url 'top' %}" class="to_top">TOPへ</a>
+            
+          </div>
+		</section>
+		{% include 'footer.html' %}
+    {% else %}
+		<div class="container main-area-fadein">
+        	<section id="cart"> 
+				{% for cart_item in cart_items %}
+					<article class="product">
+					<header>
+					<a href="{{cart_item.product.get_url}}"><img src="{% static cart_item.product.image.url %}" alt=""></a>
+					</header>
+					<div class="content b-border">
+					<h1 href="{{cart_item.product.get_url}}">{{cart_item.product.name}}</h1>
+					{{ cart_item.product.cartDescription | linebreaksbr}}
+					<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="sp-remove">×</a>
+					
+					</div>
+					<footer class="content">
+						<a href="{% url 'cart:cart_remove' cart_item.product.id %}"><span class="qt-minus">-</span></a>
+						<span class="qt">{{cart_item.quantity}} </span>
+						<a  href="{% url 'cart:add_cart' cart_item.product.id %}"><span class="qt-plus">+</span></a>
+						<h3 class="full-price">{{cart_item.sub_total}}<span>円</span></h3>
+						<h2 class="price">{{cart_item.product.price }}<span>円</span>
+					</footer>
+				</article>
+				{% endfor %}
+			</section>
+	    </div>
+		<footer id="site-footer">
+			<div class="container clearfix">
+				<div class="purchase-area">
+					<table class="price-table">
+						<tr>
+						<td>小計</td>
+						<td></td>
+						<td class="subtotal"><span>{{ total }}</span>円</td>
+						</tr>
+						<tr>
+						<td></td>
+						<td>内消費税  </td>
+						<td class="tax"><span>{{ tax  }}</span>円</td>
+						</tr>
+						
+						<tr>
+						<td>割引</td>
+						<td>記念割引</td>
+						<td><span>0</span>円</td>
+						</tr>
+					</table>
+					<div class="total-price">
+						<h1 class="total"  id="total-amount">小計 : <span>{{ total }}</span>円<p class="tax-in-text">(税込)</p></h1>
+						
+					</div>
+				</div>
+				<div class="purchase"> <a class="btn" href="{% url 'purchase:purchase' %}">決済情報入力</a></div>
+			</div>
+		</footer>
+	
+	{% endif %}
+{% comment %} 	
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>		
+	 <script src="{% static 'js/cart.js' %}"></script> {% endcomment %}
+{% endblock %}

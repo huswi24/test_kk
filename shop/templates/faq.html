@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}KUMAGAI KITCHEN | FAQ{% endblock %}
+{% block content%}
+<div class="content-area main-section-fadein">
+      <div class="faq-title">
+        <a>よくある質問</a>
+      </div>
+      <div class="faq-menu">
+          <label class="faq-label" for="faq1">Q . どのぐらいで届きますか?</label>
+          <input type="checkbox" id="faq1" class="on-off" />
+          <ul>
+              <li><a>通常であれば3営業日以内に発送いたします。<br>ご自宅に届くまでは1週間を目処にお届けいたします</a></li>
+          </ul>
+          <label class="faq-label" for="faq2">ここに質問が入ります</label>
+          <input type="checkbox" id="faq2" class="on-off" />
+          <ul>
+              <li><a>ここに回答が入ります</a></li>
+          </ul>
+          <label class="faq-label" for="faq3">ここに質問が入ります</label>
+          <input type="checkbox" id="faq3" class="on-off" />
+          <ul>
+              <li><a>ここに回答が入ります</a></li>
+          </ul>
+          <label class="faq-label" for="faq4">ここに質問が入ります</label>
+          <input type="checkbox" id="faq4" class="on-off" />
+          <ul>
+              <li><a>ここに回答が入ります</a></li>
+          </ul>
+          
+      </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock content%}

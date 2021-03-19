@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block metadescription %}
+    Sign up to get a new account with us. THe perfect cushion store has a variety of stunning and comfy cushions.
+{% endblock %}
+{% block title %}
+   新規会員登録 - KUMAGAI kitchen
+{% endblock %}
+{% block content%}
+    <div class="row">
+        {% if not form.is_valid %}
+        <div class="mx-auto">
+          <br>
+          <h1 class="my_title text-center">新規会員登録</h1>
+          <br>
+          <div class="col-9 col-md-6 col-lg-5 mx-auto bg-light">
+            <br>
+            <p>以下の情報の記入をお願いいたします。</p>
+            <form method="post">
+                {% csrf_token %}
+                <p>{{ form }}</p>
+                <button type="submit" class="btn btn-secondary">登録する</button>
+            </form>
+            <br>
+          </div>
+        </div>
+        {% else %}
+            <div class="mx-auto">
+              <br>
+              <h1 class="my_title text-center">会員登録が完了しました。</h1>
+              <br>
+              <div>            
+                <a href="{% url 'signin' %}">ログイン</a> 
+              </div>
+            </div>
+        {% endif %}
+    </div>
+    <br>
+{% endblock %}

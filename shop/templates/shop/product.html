@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block metadescription %}
+    {{ product.description|truncatewords:155 }}
+{% endblock %}
+{% block title %}
+KUMAGAI KITCHEN | {{ product.name }}  
+{% endblock %}
+{% block content %}
+
+    <section class="item-area">
+    <div class="mainsection main-section-fadein">  
+      <div class="img-area ">
+              <!-- スライダーのメインコンテナの div 要素 -->
+        <div class="swiper-container gallery-top"> 
+          <!-- ラッパーの（スライドを囲む） div 要素 -->
+          <div class="swiper-wrapper "> 
+            <!-- それぞれのスライドの div 要素 -->
+            <div class="swiper-slide"><img src="{{product.image.url}}" alt="{{product.name}}" id="slide-pic"></div>
+            <div class="swiper-slide"><img src="{{product.image2.url}}" alt="{{product.name}}" id="slide-pic"></div>
+            <div class="swiper-slide"><img src="{{product.image3.url}}" alt="{{product.name}}" id="slide-pic"></div>
+          </div>
+        </div>
+          <!-- ページネーションの div 要素 -->
+        <div class="swiper-pagination"></div>
+          <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper sp-thumbnail">
+              <div class="swiper-slide"><img src="{{product.image.url}}" alt="{{product.name}}"></div>
+              <div class="swiper-slide"><img src="{{product.image2.url}}" alt="{{product.name}}"></div>
+              <div class="swiper-slide"><img src="{{product.image3.url}}" alt="{{product.name}}"></div>
+            </div>
+          </div>
+        </div>
+        <div class="shoping-area ">
+          <div class="item-title-area">
+            <div class="item-sub-title"><a href="{{ product.category.get_url }}"><span>{{product.category}}</span></a></div>
+            <div class="item-name"><h1>{{product.name}}</h1></div>  
+            <p class="item-price">{{product.price}} 円</p>
+            <p class="item-price">口コミ点数 : <span class="item-rate">3.9点</span> / 5点</p>
+          </div>
+          <div class="text-content">
+            <div class="detail">
+              <strong class="detail-title">Detail</strong>≪商品詳細≫
+            </div>
+            <div class="explaintext">
+            {{product.description | linebreaksbr }}
+            </div>
+          </div>
+          <div class="add-cart-area">
+            {% if product.stock <= 0 %}
+              <a class="no-add-cart-button">在庫切れ</a>
+            {% else %}
+              <a class="add-cart-button" href="{% url 'cart:add_cart' product.id %}"><span >カートに追加</span></a>
+            {% endif %}
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="explain-area">
+      <div class="explain-top-words main-section-fadein">こだわりの真髄</div>
+      <ul class="contents">
+        <li class="explain-list-item animationTarget">
+          <img src="{{product.descriptionImage1.url}}" alt="{{product.name}}"></img>
+          <div class="contentsText">
+            <h2>{{product.descriptionTitle1}}</h2>
+            <p>{{product.descriptionContent1|linebreaksbr}}</p>
+          </div>
+         
+        </li>
+        <li class="explain-list-item animationTarget">
+          <img src="{{product.descriptionImage2.url}}" alt="{{product.name}}"></img>
+          <div class="contentsText">
+            <h2>{{product.descriptionTitle2}}</h2>
+            <p>{{product.descriptionContent2|linebreaksbr}}</p>
+          </div>
+         
+        </li>
+        <li class="explain-list-item animationTarget">
+          <img src="{{product.descriptionImage3.url}}" alt="{{product.name}}"></img>
+          <div class="contentsText">
+            <h2>{{product.descriptionTitle3}}</h2>
+            <p>{{product.descriptionContent3|linebreaksbr}}</p>
+          </div>
+          
+        </li>
+        <li class="explain-list-item animationTarget">
+          <img src="{{product.descriptionImage4.url}}" alt="{{product.name}}"></img>
+          <div class="contentsText">
+            <h2>{{product.descriptionTitle4}}</h2>
+            <p>{{product.descriptionContent4|linebreaksbr}}</p>
+          </div>
+        
+        </li>
+      </ul>  
+
+      <div class="sp-contents">
+        <div class="ex-column  sp-animationTarget">
+          <div class="ex-pic"><img src="{{product.descriptionImage1.url}}" alt="{{product.name}}"></img></div>
+          <div class="ex-contents">
+            <h2 id="ex-title">{{product.descriptionTitle1}}</h2>
+            <p id="ex-explain">{{product.descriptionContent1|linebreaksbr}}</p>
+          </div>
+        </div>
+        <div class="ex-column  sp-animationTarget">
+          <div class="ex-pic"><img src="{{product.descriptionImage2.url}}" alt="{{product.name}}"></img></div>
+          <div class="ex-contents">
+            <h2 id="ex-title">{{product.descriptionTitle2}}</h2>
+            <p id="ex-explain">{{product.descriptionContent2|linebreaksbr}}</p>
+          </div>
+        </div>
+        <div class="ex-column  sp-animationTarget">
+          <div class="ex-pic"><img src="{{product.descriptionImage3.url}}" alt="{{product.name}}"></img></div>
+          <div class="ex-contents">
+            <h2 id="ex-title">{{product.descriptionTitle3}}</h2>
+            <p id="ex-explain">{{product.descriptionContent3|linebreaksbr}}</p>
+          </div>
+        </div>
+        <div class="ex-column  sp-animationTarget">
+          <div class="ex-pic"><img src="{{product.descriptionImage4.url}}" alt="{{product.name}}"></img></div>
+          <div class="ex-contents">
+            <h2 id="ex-title">{{product.descriptionTitle4}}</h2>
+            <p id="ex-explain">{{product.descriptionContent4}}</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="bottom-content">
+      <div class="cv-title"><h3 id="cv">お客様の声</h3></div>
+      <div class="cv-swiper-container">
+        <div class="cv-swiper-wrapper">
+          <div class="cv-swiper-slide">Slide 1</div>
+          <div class="cv-swiper-slide">Slide 2</div>
+          <div class="cv-swiper-slide">Slide 3</div>
+          
+          <div class="cv-swiper-slide">Slide 1</div>
+          <div class="cv-swiper-slide">Slide 2</div>
+          <div class="cv-swiper-slide">Slide 3</div>
+          
+          <div class="cv-swiper-slide">Slide 1</div>
+          <div class="cv-swiper-slide">Slide 2</div>
+          <div class="cv-swiper-slide">Slide 3</div>
+          
+          <div class="cv-swiper-slide">Slide 1</div>
+          <div class="cv-swiper-slide">Slide 2</div>
+          <div class="cv-swiper-slide">Slide 3</div>
+        </div>
+        <!-- Add Pagination -->
+      </div>  
+    </div>
+    
+    <div class="sp-cart-area">
+    <div class="sp-cart-button">
+		{% if product.stock <= 0 %}
+		  <a>在庫切れ</a>
+		{% else %}
+			<a href="{% url 'cart:add_cart' product.id %}" >カートに追加</a>
+		
+		{% endif %}
+    </div>
+    </div>  
+  </section>
+
+	{% include 'footer.html' %}
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="{% static 'js/itempage.js' %}"></script>
+{% endblock %}

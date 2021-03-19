@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block metadescription %}
+    {{ product.description|truncatewords:155 }}
+{% endblock %}
+{% block title %}
+KUMAGAI KITCHEN | 問い合わせ
+{% endblock %}
+{% block content %}
+<div class="content-area main-section-fadein">
+      
+      <div class="contact-area">
+        <div class="top-contact">
+          <a class="contact-title">問い合わせ</a>
+        </div>
+        <div class="contact-form">
+          <form id="contact" action="{% url 'sendmail' %}" method="post">
+            {% csrf_token %}
+            <div class="form-container">
+              <!-- <input class="contact-input" type="text" name="name" placeholder="お名前" /><br /> -->
+              <input  class="contact-input" type="email" name="email" placeholder="メールアドレス"  required></input><br />
+              <input class="contact-input" type="text" name="title" placeholder="件名"  required></input><br />
+              <textarea type="text" name="message" placeholder="問い合わせ内容"  required></textarea><br />
+              
+              <button id="submit" type="submit">
+                送信
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+   
+
+{% endblock %}

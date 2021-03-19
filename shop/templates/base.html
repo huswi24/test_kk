@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+	  <meta name="description" content="{% block metadescription %}{% endblock %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="stylesheet" href="{% static 'css/fv_responce_style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+        
+  </head>
+  <body>
+ 
+        {% include 'navbar.html' %}
+       
+        {% block content %}
+        {% endblock %}
+	
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <script src="{% static 'js/script2.js' %}"></script>
+  
+  </body>
+</html>

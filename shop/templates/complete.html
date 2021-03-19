@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block metadescription %}
+    This is the shopping cart page.. Proced to review your items and place the order.
+{% endblock %}
+
+{% block title %}KUMAGAI KITCHEN | 問い合わせ完了{% endblock %}
+{% block content %}
+
+  <main class="main-area-fadein">
+      <div class="thx_page ">
+        <div class="complete-moji">
+          <a>問い合わせがが完了しました</a>
+          
+
+          <div >
+            <a href="{% url 'shop:allProdCat' %}" class="link-under-line"><span class="to_top_page_ad"> 商品一覧へ</span></a>
+          </div>
+        </div>
+        
+      </div>
+
+  </main>
+  {% include 'footer.html' %}
+ {% endblock %}

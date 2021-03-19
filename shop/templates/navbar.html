@@ -1,0 +1,85 @@
+{% load static %}
+    
+	<header >
+      <div class="header-area fadein-target">
+        <div class="header-item-area ">
+          <a class="top-logo" href="{% url 'top' %}"><img src="{% static 'img/kumagai4_1.png' %}" alt="KUMAGAIKITCHEN"></a>
+          <nav class="header-nav">
+            <ul class="gnav" id="header-item-list">
+                <li class="link-under-line">
+                  <a><span class="fontRound ">BRANDS</span></a>
+                  <ul class="child-list">
+                    {% for cat in links %}
+                      <li class="gchild-item link-under-line"><a href="{{cat.get_url}}">{{cat.name}}</a></li>
+                    {% endfor %} 
+                  </ul>
+                </li>
+                <li class="link-under-line"><a href="{% url 'shop:allProdCat' %}"><span class="fontRound ">ITEMS</span></a></li>
+				        <li class="link-under-line">
+                  {% if request.user.is_authenticated and request.user.first_name %}
+                    <a><span class="fontRound ">{{ request.user.first_name }} </span></a>
+                    <ul class="child-list">
+                        <li class="gchild-item link-under-line"><a href="{% url 'order:order_history' %}" >購入履歴</a></li>
+                        <li class="gchild-item link-under-line"><a href="{% url 'signout' %}">ログアウト</a></li>
+                    </ul>
+                  {% else %}
+                    <a><span class="fontRound ">MEMBER</span></a>
+                    <ul class="child-list">
+                      <li class="gchild-item link-under-line"><a href="{% url 'signup' %}">新規登録</a></li>
+                      <li class="gchild-item link-under-line"><a href="{% url 'signin' %}">ログイン</a></li>
+                    </ul>
+                  {% endif %}
+                </li>
+                <li class="link-under-line"><a href="{% url 'cart:cart_detail' %}" ><span class="fontRound ">CART</span>[ {{item_count}} ]</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>      
+  </header> 
+    
+    <div id="navArea">
+        <nav class="sp-nav">
+          <div class="inner">
+            <ul>
+              <li>
+                <input id="brands-check" class="acd-check" type="checkbox">
+                <label class="acd-label" for="brands-check">BRANDS</label>
+                <div class="acd-content">
+                  {% for cat in links %}
+                    <p href="{{cat.get_url}}">{{cat.name}}</p>
+                  {% endfor %}
+                </div>
+              </li>
+              <li><a href="{% url 'shop:allProdCat' %}">ITEMS</a></li>
+              <li>
+                <input id="acd-check1" class="acd-check" type="checkbox">
+                {% if request.user.is_authenticated and request.user.first_name %}
+                  <label class="acd-label" for="acd-check1">{{ request.user.first_name }}</label>
+                  <div class="acd-content">
+                    <p href="{% url 'order:order_history' %}">購入履歴</p>
+                    <p href="{% url 'signout' %}">ログアウト</p>
+                  </div>
+                {% else %}
+                  <label class="acd-label" for="acd-check1">MEMBER</label>
+                  <div class="acd-content">
+                    <p href="{% url 'signup' %}">新規登録</p>
+                    <p href="{% url 'signin' %}">ログイン</p>
+                  </div>
+                {% endif %}
+                  
+              </li>
+              <li ><a href="{% url 'cart:cart_detail' %}" >CART[{{item_count}}]</a></li>
+              <li><a href="{% url 'aboutus' %}">CONTACT</a></li>
+            </ul>
+          </div>
+          <div class="side-c-right">
+              <p >Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved KUMAGAICORPORATION</a></p>
+          </div>
+        </nav>
+        <div class="toggle_btn fadein-target">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="mask"></div>
+      </div>

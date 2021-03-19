@@ -1,0 +1,543 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content%}
+ <section id="home-section" class="hero">
+<div class="home-slider js-fullheight owl-carousel">
+	<div class="slider-item js-fullheight">
+	    <div class="overlay"></div>
+	        <div class="container-fluid p-0">
+	          	<div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+	          		<div class="one-third order-md-last img js-fullheight" style="background-image:url({% static 'img/bg-img/vino_bg.jpg'%});">
+	          		</div>
+		          	<div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          		<div class="text">
+		          			<span class="subheading">KUMAGAI kitchen Online Shop</span>
+		          			<div class="horizontal">
+		          				<h3 class="vr" style="background-image: url(images/divider.jpg);">Stablished Since 2020</h3>
+				            	<h1 class="mb-4 mt-3"> 渋谷から全国へ<br><span>本場</span>を届けます。</h1>
+				            	<p>クマガイコーポレーション株式会社では創業より、イタリア、フランスの現地で調達したワインや食材を日本へ自社輸入してきました。</p>
+				            	<p><a href="{% url 'shop:allProdCat' %}" class="btn btn-primary px-5 py-3 mt-3">商品を見る</a></p>
+				          	</div>
+		            	</div>
+		          	</div>
+	        	</div>
+	        </div>
+	</div>
+
+	      <div class="slider-item js-fullheight">
+	      	<div class="overlay"></div>
+	        <div class="container-fluid p-0">
+	          <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third order-md-last img js-fullheight" style="background-image:url({% static 'img/bg-img/burger.jpg'%});">
+	          	</div>
+		          <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">New Delivery Site</span>
+		          		<div class="horizontal">
+		          			<h3 class="vr" style="background-image: url({% static 'images/divider.jpg'%});">KUMAGAICORPORATION</h3>
+				            <h1 class="mb-4 mt-3"><span>渋谷地区限定</span>ご自宅へ<br/>お店の味をお届けします。</h1>
+				            <pクマガイコーポレーションではより安心してお客様にお店の味を提供したく、新たにデリバリーサービスをはじめました。</p>
+				            
+				            <p><a href="" class="btn btn-primary px-5 py-3 mt-3">SHIBUYA PREMIUM DELIIVERY</a></p>
+				          </div>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+	    </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({% static 'img/bg-img/video_demo.png'%});">
+						<a href="https://yamashiro-ya.jp/wp-content/uploads/2020/07/Hamo_Movie1.mp4" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+							<span class="icon-play"></span>
+						</a>
+					</div>
+					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+	          <div class="heading-section-bold mb-4 mt-md-5">
+	          	<div class="ml-md-0">
+		            <h2 class="mb-4">食材はもちろん、技術にも<br/>本物を求めています。</h2>
+	            </div>
+	          </div>
+	          <div class="pb-md-5">
+							<p>食材がいいからといって確かな技術がなければ、食材の最大限のクオリティは提供できません。弊社のスタッフは厳しい鍛錬を経て、確かな技術を取得、継承しております。</p>
+							<div class="row ftco-services">
+			          <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+			            <div class="media block-6 services">
+			              <div class="icon d-flex justify-content-center align-items-center mb-4">
+			            		<span class="flaticon-002-recommended"></span>
+			              </div>
+			              <div class="media-body">
+			                <h3 class="heading">料理人のプライド</h3>
+			                <p>各店舗の料理人が自身のプライドを胸に考案した商品をお届けします。</p>
+			              </div>
+			            </div>      
+			          </div>
+			          <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+			            <div class="media block-6 services">
+			              <div class="icon d-flex justify-content-center align-items-center mb-4">
+			            		<span class="flaticon-001-box"></span>
+			              </div>
+			              <div class="media-body">
+			                <h3 class="heading">外装にも本物を</h3>
+			                <p>商品にこだわるあまり外装が残念が商品が多いですが、試行錯誤によりベストな外装を決定いたしました。</p>
+			              </div>
+			            </div>    
+			          </div>
+			          <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+			            <div class="media block-6 services">
+			              <div class="icon d-flex justify-content-center align-items-center mb-4">
+			            		<span class="flaticon-003-medal"></span>
+			              </div>
+			              <div class="media-body">
+			                <h3 class="heading">本物の証明</h3>
+			                <p>ワインはD.O.C.,D.O.C.G.、使用食材は農業世界遺産の無農薬有機野菜や、フランス政府認定マークを取得している食材です。</p>
+			              </div>
+			            </div>      
+			          </div>
+			        </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <!--<section class="ftco-section bg-light">
+    	<div class="container">
+				<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Popular Products</h2>
+            <p>人気商品の一部をご案内</p>
+          </div>
+        </div>   		
+    	</div>
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+    						<span class="status">30%</span>
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+		    					</div>
+		    					<div class="rating">
+	    							<p class="text-right">
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    							</p>
+	    						</div>
+	    					</div>
+	    					<p class="bottom-area d-flex px-3">
+    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="Colorlib Template">
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>$120.00</span></p>
+		    					</div>
+		    					<div class="rating">
+	    							<p class="text-right">
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    							</p>
+	    						</div>
+	    					</div>
+    						<p class="bottom-area d-flex px-3">
+    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="Colorlib Template">
+	    					<div class="overlay"></div>
+	    				</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>$120.00</span></p>
+		    					</div>
+		    					<div class="rating">
+	    							<p class="text-right">
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    							</p>
+	    						</div>
+	    					</div>
+    						<p class="bottom-area d-flex px-3">
+    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="Colorlib Template">
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span>$120.00</span></p>
+		    					</div>
+		    					<div class="rating">
+	    							<p class="text-right">
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+	    							</p>
+	    						</div>
+	    					</div>
+    						<p class="bottom-area d-flex px-3">
+    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section> -->
+	<section class="ftco-section bg-light">
+    	<div class="container">
+			<div class="row justify-content-center mb-3 pb-3">
+          		<div class="col-md-12 heading-section text-center ftco-animate">
+            		<h2 class="mb-4">こだわりをもつお客様にも満足していただけます。</h2>
+            		<p>商品のご案内</p>
+          		</div>
+        	</div>   		
+    	</div>
+    </section>
+
+    <section class="ftco-section ftco-choose ftco-no-pb ftco-no-pt bg-dark">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-8 d-flex align-items-stretch">
+    				<div class="img" style="background-image: url({% static 'img/bg-img/yama_tk.jpg'%});"></div>
+    			</div>
+    			<div class="col-md-4 py-md-5 ftco-animate">
+    				<div class="text py-3 py-md-5">
+	            <h2 class="mb-4" style="color:#fff;">伝統と新世代への挑戦を<br/>組み合わせた京くずし割烹</h2>
+	            <p>伝統的な京料理の手法で、世界の食材を、独創的な組み合わせで楽しむ現代の新割烹料理を特製の桐箱に入りご自宅で楽しんでいただけます。</p>
+	            <p><a href="https://yamashiro-ya.jp" class="btn btn-white px-4 py-3">山城屋庄蔵 HP</a></p>
+    				</div>
+    			</div>
+    		</div>
+
+    		<div class="row">
+    			<div class="col-md-5 order-md-last d-flex align-items-stretch" >
+    				<div class="img img-2" style="background-image: url({% static 'img/bg-img/vigan_pasta.jpg'%});"></div>
+    			</div>
+    			<div class="col-md-7 py-3 py-md-5 ftco-animate">
+    				<div class="text text-2 py-md-5">
+	            <h2 class="mb-4" style="color:#fff;">ヴィーガン、グルテンフリー対応商品ご用意しております。</h2>
+	            <p>渋谷・スペイン坂にあるオーガニックレストラン BiOcafe。<br/>"食べてキレイになる"がコンセプトのBiOcafeではベジタリアン、ヴィーガン、グルテンフリー などに対応商品を多数ご用意しており、<br/>多くのお客様から御支持をいただいております。</p>
+	            <p><a href="https://biocafe.jp" class="btn btn-white px-4 py-3">BiOcafe HP</a></p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section bg-light">
+    	<div class="container">
+			<div class="row justify-content-center mb-3 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Our Restaurants</h2>
+				<p>渋谷、新宿、上野、秋葉原に<br/>合計11店舗ございます</p>
+			</div>
+			</div>   		
+    	</div>
+    	<div class="container">
+    		<div class="row">
+    			
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://bistrotgourmand.jp" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_bistrogourmand.gif'%}" alt="gourmand">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://bistrotgourmand.jp">ビストロ グルマン</a></h3>
+							<p>気軽に本格フレンチを。</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://pizzeria.jp" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_chiocciola.gif'%}" alt="chiocciola">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://pizzeria.jp">キオッチョラ ピッツェリア</a></h3>
+							<p>フルシチュエーションイタリアン</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://biocafe.jp" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_bio.gif'%}" alt="BiOcafe">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://biocafe.jp">BiOcafe</a></h3>
+							<p>オーガニックレストラン</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://yamashiro-ya.jp" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_yamashiroyashozo.gif'%}" alt="yamashiroyashozo">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://yamashiro-ya.jp">山城屋庄蔵</a></h3>
+							<p>新世代の京くずし割烹</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://bityuya.jp" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_bichuya.gif'%}" alt="Bittyuya">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://bityuya.jp">備中屋長左衛門</a></h3>
+							<p>備長炭でさつま若しゃもを</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+			<div class="row">
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://www.kinojiya.com" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_kinojiya.gif'%}" alt="kinojiya">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://www.kinojiya.com">喜乃字屋</a></h3>
+							<p>伝統と挑戦の蕎麦</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://kumagaicorp.jp/brand/sinsyuya" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_sinsyuya.gif'%}"　alt="shinshuya">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://kumagaicorp.jp/brand/sinsyuya">信州屋</a></h3>
+							<p>日常使い出来る蕎麦屋さん</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://kumagaicorp.jp/brand/yamashiroya-bunten" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_yamashiroya_bunten.gif'%}" alt="winebar">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://kumagaicorp.jp/brand/yamashiroya-bunten">山城屋分店WineBar</a></h3>
+							<p>直輸入ワイン×カウンター</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://lasoffitta.jp" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_lasoffitta.gif'%}" alt="soffitta">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://lasoffitta.jp">ラ・ソフィッタ</a></h3>
+							<p>薪窯ピッツァ</p>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="product" style="text-align:center;">
+    					<a href="https://kumagaicorp.jp/brand/ningenkankei" class="img-prod"><img class="img-fluid" src="{% static 'img/core-img/logo_ningenkankei.gif'%}" alt="Ninkan">
+    					</a>
+    					<div class="text py-3 px-3">
+    						<h3><a href="https://kumagaicorp.jp/brand/ningenkankei">人間関係</a></h3>
+							<p>スペイン坂の老舗カフェ</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'img/bg-img/driver_2.jpg'%});">
+    	<div class="container">
+    		<div class="row justify-content-center py-5">
+    			<div class="col-md-10">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="1098207">0</strong>人
+		                <span>延べ来店人数</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="238">0</strong>種類
+		                <span>取り扱いワイン</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="78">0</strong>人
+		                <span>配達員数</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="13">0</strong>分
+		                <span>平均配達時間</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section testimony-section">
+      <div class="container" >
+        <div class="row justify-content-center mb-5 pb-3" >
+          <div class="col-md-7 heading-section ftco-animate">
+            <h2 class="mb-4">Instagram's Voices (テスト版)</h2>
+            <p>Instagram (#kumagaikitchen) が付けられた投稿のご紹介!</p>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'img/core-img/person_1.jpg'%})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5 pl-4 line" >なかなか食べれない商品が多数揃えてあって、家族全員満足です!</p>
+                    <p class="name">test_kumagai</p>
+                    <!--<span class="position">Marketing Manager</span>-->
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'img/core-img/person_1.jpg'%})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5 pl-4 line" >なかなか食べれない商品が多数揃えてあって、家族全員満足です!</p>
+                    <p class="name">test_kumagai</p>
+                    <!--<span class="position">Marketing Manager</span>-->
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'img/core-img/person_1.jpg'%})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5 pl-4 line" >なかなか食べれない商品が多数揃えてあって、家族全員満足です!</p>
+                    <p class="name">test_kumagai</p>
+                    <!--<span class="position">Marketing Manager</span>-->
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'img/core-img/person_1.jpg'%})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5 pl-4 line" >なかなか食べれない商品が多数揃えてあって、家族全員満足です!</p>
+                    <p class="name">test_kumagai</p>
+                    <!--<span class="position">Marketing Manager</span>-->
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'img/core-img/person_1.jpg'%})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5 pl-4 line" >なかなか食べれない商品が多数揃えてあって、家族全員満足です!</p>
+                    <p class="name">test_kumagai</p>
+                    <!--<span class="position">Marketing Manager</span>-->
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'img/core-img/person_1.jpg'%})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5 pl-4 line" >なかなか食べれない商品が多数揃えてあって、家族全員満足です!</p>
+                    <p class="name">test_kumagai</p>
+                    <!--<span class="position">Marketing Manager</span>-->
+                  </div>
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock content%}

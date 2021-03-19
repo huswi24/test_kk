@@ -1,0 +1,11 @@
+
+{{ name }} 様
+　
+この度はお買い上げありがとうございました。
+
+またのご利用をお待ちしております。
+
+詳細
+購入金額　{{ all_total　}}円
+
+All right reserved 2021 KUMAGAICORPRATION 
